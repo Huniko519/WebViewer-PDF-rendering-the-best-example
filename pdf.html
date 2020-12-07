@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="custom.css">
+</head>
+<style>
+	@media only screen and (max-width: 600px) {
+		#pdf-main-container, #pdf-canvas{
+			width: 300px !important;
+		}
+	}
+</style>
+<body>
+<div id="pdf-main-container" style="width: 500px">
+	<div id="pdf-loader">Loading document ...</div>
+	<div id="pdf-contents">
+		<div>
+			<div id="pdf-buttons">
+				<button id="pdf-prev"><</button>
+				<div id="page-count-container">Page <div id="pdf-current-page"></div> of <div id="pdf-total-pages"></div></div>	
+				<button id="pdf-next">></button>
+			</div>
+		</div>
+		<canvas id="pdf-canvas" width="500px"></canvas>
+		<div id="page-loader">Loading page ...</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
+<script src="custom.js"></script>
+<script>
+window.onload = function(e){ 
+    showPDF('https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf');
+}
+</script>
+
+</body>
+</html>
